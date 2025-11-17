@@ -1,9 +1,12 @@
+import { ProtectedRoute } from '@/components/auth/protected-route';
 import { Container } from '@/components/layout/container';
 import { Header } from '@/components/layout/header';
 import { Sidebar } from '@/components/layout/sidebar';
 import { Stack } from '@/components/layout/stack';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { Toaster } from '@/components/ui/toast';
+import { AuthProvider } from '@/hooks/use-auth';
 import { cn } from '@/lib/utils';
 
 export default function DashboardLayout({
@@ -12,7 +15,10 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen w-full overflow-hidden">
+    <AuthProvider>
+      <ProtectedRoute>
+        <Toaster />
+        <div className="flex h-screen w-full overflow-hidden">
       <Sidebar>
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">Navigation</h2>
@@ -49,7 +55,9 @@ export default function DashboardLayout({
             {children}
           </Container>
         </main>
+        </div>
       </div>
-    </div>
+      </ProtectedRoute>
+    </AuthProvider>
   );
 }
