@@ -109,7 +109,7 @@ export function EnhancedDuplicateDialog({
             Дублировать шаблон
           </DialogTitle>
           <DialogDescription>
-            Создайте копию шаблона "{template.name}"
+            Создайте копию шаблона &quot;{template.name}&quot;
           </DialogDescription>
         </DialogHeader>
 
