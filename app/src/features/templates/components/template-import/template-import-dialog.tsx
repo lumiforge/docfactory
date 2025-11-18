@@ -336,7 +336,7 @@ export function TemplateImportDialog({
                                 <div className="flex items-center space-x-2">
                                   <RadioGroupItem value="rename" id="rename" />
                                   <Label htmlFor="rename" className="text-sm">
-                                    Переименовать новый шаблон (добавить "(импорт)")
+                                    Переименовать новый шаблон (добавить &quot;(импорт)&quot;)
                                   </Label>
                                 </div>
                                 <div className="flex items-center space-x-2">
